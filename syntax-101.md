@@ -6,20 +6,22 @@ description: This is a short guide to the basic Swift syntax.
 
 #### 1. Variables and Data Types
 
-**Variables and Constants**: Variables are declared as `var` and constants as `let`.
+* **Variables and Constants**: Variables are declared as `var` and constants as `let`.
 
 ```swift
 var myVariable = 10
 let myConstant = 42
 ```
 
-**Data Types**: The basic data types in Swift are `Int`, `Double`, `Float`, `String`, `Bool` and `Data`.&#x20;
+* **Data Types**: The basic data types in Swift are `Int`, `Double`, `Float`, `String`, `Bool` and `Data`.&#x20;
 
 ```swift
-var myString: String = "Hello, Swift"
-var myInt: Int = 10
-var myDouble: Double = 10.0
-var isBool: Bool = true
+let myString: String = "Hello, Swift"
+let myInt: Int = 10
+let myDouble: Double = 123.45678901234568 //64-bit floating-point number
+let myFloat: Float = 123.45679 //32-bit floating-point number
+let isBool: Bool = true
+let currentDate = Date()
 ```
 
 #### 2. Operators
@@ -44,6 +46,7 @@ var isBool: Bool = true
 
     ```swift
     let fruit = "apple"
+
     switch fruit {
     case "apple":
         print("It's an apple")
@@ -55,15 +58,29 @@ var isBool: Bool = true
     ```
 *   **Loops**: `for`, `while`, and `repeat-while` loops.
 
-    ```swift
-    for i in 1...5 {
-        print(i)
+    <pre class="language-swift"><code class="lang-swift"><strong>// for loops:
+    </strong><strong>for i in 1...5 {
+    </strong>    print(i)
     }
-    ```
+
+    // while loops:
+    var timeLeft = 10
+    while timeLeft > 0 {
+        print("Time left: \(timeLeft) seconds")
+        timeLeft -= 1
+    }
+
+    // repeat...while loops:
+    var attempts = 0
+    repeat {
+        print("\(attempts + 1)")
+        attempts += 1
+    } while attempts &#x3C; 3
+    </code></pre>
 
 #### 4. **Functions**
 
-*   Defining and calling functions.
+*   Define and call functions.
 
     ```swift
     func greet(name: String) -> String {
@@ -75,7 +92,7 @@ var isBool: Bool = true
 
 #### 5. **Optionals**
 
-*   Understanding and safely unwrapping optionals using `?`, `!`, and `if let`.
+*   Safely unwrap optionals using `?`, `!`, and `if let`.
 
     ```swift
     var optionalString: String? = "Hello"
@@ -89,7 +106,7 @@ var isBool: Bool = true
 *   **Arrays**: Ordered collections.
 
     ```swift
-    var array = [1, 2, 3, 4, 5]
+    var array = ["John", "Mary", "Theo", "Claire", "Mary"]
     ```
 *   **Dictionaries**: Key-value pairs.
 
